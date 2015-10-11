@@ -1,11 +1,4 @@
 {
   "name": "cordova-plugin-apprate",
-  "version": "0.1.7",
-  "dependencies": {
-    "cordova": "*",
-    "grunt": "*",
-    "grunt-codo": "*",
-    "grunt-contrib-coffee": "*",
-    "grunt-cordovacli": "*"
-  }
+  "version": "0.1.7"
 }
