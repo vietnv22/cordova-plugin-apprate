@@ -48,6 +48,7 @@ AppRate = (function() {
       case 1:
         updateCounter('stop');
         AppRate.navigateToAppStore();
+        break;
       case 2:
         updateCounter('reset');
         break;
@@ -56,7 +57,6 @@ AppRate = (function() {
         break;
       default:
         updateCounter('reset');
-        break;
     }
     return typeof (_base = AppRate.preferences.callbacks).onButtonClicked === "function" ? _base.onButtonClicked(buttonIndex) : void 0;
   };
@@ -86,7 +86,7 @@ AppRate = (function() {
     if (counter.countdown === AppRate.preferences.usesUntilPrompt || immediately) {
       if (!AppRate.preferences.useCustomRateDialog) {
         localeObj = AppRate.preferences.customLocale || Locales.getLocale(AppRate.preferences.useLanguage, AppRate.preferences.displayAppName);
-        navigator.notification.confirm(localeObj.message, promptForRatingWindowButtonClickHandler, localeObj.title, localeObj.rateButtonLabel], [localeObj.cancelButtonLabel, localeObj.laterButtonLabel);
+        navigator.notification.confirm(localeObj.message, promptForRatingWindowButtonClickHandler, localeObj.title, [localeObj.rateButtonLabel, localeObj.cancelButtonLabel, localeObj.laterButtonLabel]);
       }
       if (typeof (_base = AppRate.preferences.callbacks).onRateDialogShow === "function") {
         _base.onRateDialogShow(promptForRatingWindowButtonClickHandler);
